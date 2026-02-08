@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORSUREEE - Premium Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <p>✨ Complimentary Shipping on Orders Above PKR 5,000 | Exclusive Collections</p>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>FORSUREEE</h1>
+                        <p class="tagline">Timeless Elegance</p>
+                    </a>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search your style...">
+                    <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="nav-icons">
+                    <a href="#" class="icon-link"><i class="fas fa-user"></i></a>
+                    <a href="#" class="icon-link"><i class="fas fa-heart"></i></a>
+                    <a href="#" class="icon-link cart-icon" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="main-nav">
+            <div class="container">
+                <ul class="nav-menu" id="navMenu">
+                    <li class="dropdown">
+                        <a href="#">WOMEN <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h3>Essentials</h3>
+                                    <a href="#">Blazers & Coats</a>
+                                    <a href="#">Silk Blouses</a>
+                                    <a href="#">Trousers</a>
+                                    <a href="#">Cashmere Knits</a>
+                                    <a href="#">Pleated Skirts</a>
+                                    <a href="#">Midi Dresses</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Collections</h3>
+                                    <a href="#">Heritage Line</a>
+                                    <a href="#">Summer Linen</a>
+                                    <a href="#">Evening Wear</a>
+                                    <a href="#">Business Formal</a>
+                                    <a href="#">Weekend Casual</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Premium</h3>
+                                    <a href="#">Designer Pieces</a>
+                                    <a href="#">Limited Edition</a>
+                                    <a href="#">Signature Collection</a>
+                                    <a href="#">Luxury Basics</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">MEN <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h3>Essentials</h3>
+                                    <a href="#">Oxford Shirts</a>
+                                    <a href="#">Tailored Suits</a>
+                                    <a href="#">Chinos & Trousers</a>
+                                    <a href="#">Polo Shirts</a>
+                                    <a href="#">Knit Sweaters</a>
+                                    <a href="#">Blazers</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Collections</h3>
+                                    <a href="#">Gentleman's Club</a>
+                                    <a href="#">Smart Casual</a>
+                                    <a href="#">Business Elite</a>
+                                    <a href="#">Weekend Classics</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Premium</h3>
+                                    <a href="#">Bespoke Line</a>
+                                    <a href="#">Italian Cuts</a>
+                                    <a href="#">Heritage Collection</a>
+                                    <a href="#">Luxury Basics</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">KIDS <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h3>Girls</h3>
+                                    <a href="#">Classic Dresses</a>
+                                    <a href="#">Blouses & Tops</a>
+                                    <a href="#">Skirts & Pants</a>
+                                    <a href="#">Cardigans</a>
+                                    <a href="#">Party Wear</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Boys</h3>
+                                    <a href="#">Dress Shirts</a>
+                                    <a href="#">Polo Collection</a>
+                                    <a href="#">Chinos & Pants</a>
+                                    <a href="#">Blazers</a>
+                                    <a href="#">Formal Wear</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Collections</h3>
+                                    <a href="#">Mini Classics</a>
+                                    <a href="#">School Prep</a>
+                                    <a href="#">Special Occasions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">ACCESSORIES <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <h3>Bags & Leather</h3>
+                                    <a href="#">Leather Totes</a>
+                                    <a href="#">Crossbody Bags</a>
+                                    <a href="#">Briefcases</a>
+                                    <a href="#">Clutches</a>
+                                    <a href="#">Wallets</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Jewelry</h3>
+                                    <a href="#">Minimalist Jewelry</a>
+                                    <a href="#">Watches</a>
+                                    <a href="#">Cufflinks</a>
+                                    <a href="#">Rings & Bracelets</a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <h3>Others</h3>
+                                    <a href="#">Silk Scarves</a>
+                                    <a href="#">Leather Belts</a>
+                                    <a href="#">Sunglasses</a>
+                                    <a href="#">Ties & Bowties</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">NEW ARRIVALS</a></li>
+                    <li><a href="#">SALE</a></li>
+                    <li><a href="#">HERITAGE</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cartTotal">PKR 0</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <p class="shipping-note">Free shipping on orders over PKR 5,000</p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slide active">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=900&fit=crop" alt="Fashion Collection">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>The Art of Timeless Style</h2>
+                <p>Where Heritage Meets Modern Elegance</p>
+                <button class="cta-btn">Discover Collection</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Curated Collections</h2>
+            <p class="section-subtitle">Discover your signature style</p>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=750&fit=crop" alt="Women's Collection">
+                    <div class="category-overlay">
+                        <h3>WOMEN</h3>
+                        <p>Refined Elegance</p>
+                        <a href="#" class="category-link">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&h=750&fit=crop" alt="Men's Collection">
+                    <div class="category-overlay">
+                        <h3>MEN</h3>
+                        <p>Classic Sophistication</p>
+                        <a href="#" class="category-link">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=600&h=750&fit=crop" alt="Kids Collection">
+                    <div class="category-overlay">
+                        <h3>KIDS</h3>
+                        <p>Mini Classics</p>
+                        <a href="#" class="category-link">Explore</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&h=750&fit=crop" alt="Accessories">
+                    <div class="category-overlay">
+                        <h3>ACCESSORIES</h3>
+                        <p>Finishing Touches</p>
+                        <a href="#" class="category-link">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Pieces</h2>
+            <p class="section-subtitle">Handpicked for the discerning</p>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-name="Classic Camel Blazer">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&h=650&fit=crop" alt="Camel Blazer">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Camel Blazer</h3>
+                        <p class="product-category">Women's Heritage</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 18,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Classic Camel Blazer', 18999, 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-name="Ivory Silk Blouse">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1564257577802-18f25f53d368?w=500&h=650&fit=crop" alt="Silk Blouse">
+                        <span class="badge">New</span>
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ivory Silk Blouse</h3>
+                        <p class="product-category">Women's Essentials</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 12,499</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Ivory Silk Blouse', 12499, 'https://images.unsplash.com/photo-1564257577802-18f25f53d368?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-name="Navy Oxford Shirt">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&h=650&fit=crop" alt="Oxford Shirt">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Navy Oxford Shirt</h3>
+                        <p class="product-category">Men's Classics</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 8,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Navy Oxford Shirt', 8999, 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-name="Tailored Grey Suit">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500&h=650&fit=crop" alt="Grey Suit">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tailored Grey Suit</h3>
+                        <p class="product-category">Men's Premium</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 35,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Tailored Grey Suit', 35999, 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-name="Pleated Midi Skirt">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500&h=650&fit=crop" alt="Pleated Skirt">
+                        <span class="badge sale">Sale</span>
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pleated Midi Skirt</h3>
+                        <p class="product-category">Women's Classics</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 9,999</span>
+                            <span class="old-price">PKR 14,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Pleated Midi Skirt', 9999, 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-name="Cashmere Knit Sweater">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&h=650&fit=crop" alt="Cashmere Sweater">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cashmere Knit Sweater</h3>
+                        <p class="product-category">Men's Premium</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 16,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Cashmere Knit Sweater', 16999, 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card" data-name="Beige Trench Coat">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500&h=650&fit=crop" alt="Trench Coat">
+                        <span class="badge">New</span>
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Beige Trench Coat</h3>
+                        <p class="product-category">Women's Heritage</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 28,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Beige Trench Coat', 28999, 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card" data-name="Charcoal Wool Blazer">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&h=650&fit=crop" alt="Wool Blazer">
+                        <div class="product-actions">
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                            <button class="add-wishlist"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Charcoal Wool Blazer</h3>
+                        <p class="product-category">Men's Essentials</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.9)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">PKR 22,999</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart('Charcoal Wool Blazer', 22999, 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=100&h=100&fit=crop')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>On orders over PKR 5,000</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>14-day return policy</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% protected transactions</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe for exclusive access to new collections and special offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>FORSUREEE</h3>
+                    <p class="footer-tagline">Timeless Elegance</p>
+                    <p class="footer-desc">Curating classic fashion for the modern individual. Where heritage craftsmanship meets contemporary style.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/111mursh/?hl=en" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Get in Touch</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> F-7 Markaz, Islamabad, Pakistan</li>
+                        <li><i class="fas fa-phone"></i> +92 341 1229098</li>
+                        <li><i class="fas fa-envelope"></i> talalabdullahkh@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon - Sat: 10AM - 8PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FORSUREEE. All Rights Reserved. Crafted with passion.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
